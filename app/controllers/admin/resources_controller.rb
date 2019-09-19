@@ -257,7 +257,7 @@ class Admin::ResourcesController < Admin::BaseController
   end
 
   def cleanup_params
-    params.delete_if { |_, v| v.empty? }
+    params.delete_if { |_, v| v.blank? }
   end
 
   def cleanup_attributes_before_update
