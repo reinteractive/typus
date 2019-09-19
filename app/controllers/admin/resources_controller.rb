@@ -247,11 +247,6 @@ class Admin::ResourcesController < Admin::BaseController
     permit_params!
   end
 
-  def permitted_params
-    params.permit!
-  end
-  helper_method :permitted_params
-
   def permit_params!
     params[@object_name].permit!
   end
