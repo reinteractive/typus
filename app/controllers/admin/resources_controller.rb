@@ -248,7 +248,7 @@ class Admin::ResourcesController < Admin::BaseController
   end
 
   def permit_params!
-    params[@object_name].permit!
+    params[@object_name].permit! if params[@object_name]
   end
 
   def cleanup_params
