@@ -13,6 +13,7 @@ class Admin::ResourcesController < Admin::BaseController
   before_action :get_object, only: Whitelist + [:show]
   before_action :check_resource_ownership, only: Whitelist
   before_action :check_if_user_can_perform_action_on_resources
+  before_action :set_resources_action_on_lists, only: [:index]
 
   def index
     get_objects
