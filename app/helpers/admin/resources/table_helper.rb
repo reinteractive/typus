@@ -62,7 +62,10 @@ module Admin::Resources::TableHelper
 
       {
         message: t(body),
-        url: params.permit.merge({controller: "/admin/#{model.to_resource}", id: item.id}).merge(url),
+        url: params.
+          permit(:search, :sort_order).
+          merge({controller: "/admin/#{model.to_resource}", id: item.id}).
+          merge(url),
         options: options,
       }
     end.compact
