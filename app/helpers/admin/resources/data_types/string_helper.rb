@@ -20,7 +20,7 @@ module Admin::Resources::DataTypes::StringHelper
     attribute = @resource.human_attribute_name(filter)
 
     items = [[attribute.capitalize, '']]
-    array = values.first.is_a?(Array) ? values : values.map { |i| ["#{attribute}:#{i}", i] }
+    array = values.first.is_a?(Array) ? values : values.map { |i| [i.capitalize, i] }
 
     items + array
   end
