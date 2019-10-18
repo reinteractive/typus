@@ -2,8 +2,12 @@ module Admin::ResourcesHelper
 
   def admin_search(resource = @resource, params = self.params)
     if (typus_search = resource.typus_defaults_for(:search)) && typus_search.any?
+      hidden_filters = params.dup
 
-      hidden_filters = params.to_h.dup
+      # HACK: Ideally everything should be a `ActionController::Parameters` object
+      unless params.is_a?(Hash)
+        hidden_filters = hidden_filters.permit!.to_h
+      end
 
       rejections = %w(id controller action locale utf8 sort_order order_by search page subdomain)
       hidden_filters.delete_if { |k, _| rejections.include?(k.to_s) }
