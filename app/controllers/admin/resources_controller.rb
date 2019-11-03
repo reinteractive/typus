@@ -107,7 +107,7 @@ class Admin::ResourcesController < Admin::BaseController
       else
         flash[:alert] = @item.errors.full_messages
       end
-      redirect_back(fallback_location: url_for(get_model))
+      redirect_to action: :index
     end
   end
 
