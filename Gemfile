@@ -6,13 +6,13 @@ source 'https://rubygems.org'
 gemspec
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.6'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.2.1'
+gem 'coffee-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -28,13 +28,14 @@ gem 'pg', '~> 0.18.4'
 gem 'acts_as_list', github: 'typus/acts_as_list'
 gem 'acts_as_tree'
 gem 'rails-permalink', '~> 1.0.0'
-gem 'rails-trash', github: 'fesplugas/rails-trash'
+gem 'rails-trash', :github => 'trilogyinteractive/rails-trash'
 
 # Rich Text Editor
-gem 'ckeditor-rails', github: 'fesplugas/rails-ckeditor'
+# gem 'ckeditor-rails', github: 'fesplugas/rails-ckeditor'
+gem 'ckeditor_rails_6'
 
 # Alternative authentication
-gem 'devise', '~> 4.2.0'
+gem 'devise'
 
 # Asset Management
 gem 'dragonfly', '~> 1.0.12'
